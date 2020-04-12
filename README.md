@@ -7,8 +7,15 @@ once you enter the shell you can run your executable and use it similarly to the
 # main features
 you can use the simple shell without the use of many libraries that include functions such as printf, strlen, strdup and strtok.
 
-| env  | prints the current global variables  |
+| Feature  | how it works  |
 | ------------ | ------------ |
+| env  | prints the current global variables  |
+| exit  |exits the prompt with 0 status   |
+| history | prints 4096 commands from either a file or the current user executed commands      |
+| CTRL + D  | exit the prompt EOF   |
+| CTRL + C | every time the user sends this signal its handled to not exit the prompt  |
+| ; | execute a bunch of commands separated by  ;  sequentially |
+| # | comment indicator  |
 | exit  |exits the prompt with 0 status   |
 | history | prints 4096 commands from either a file or the current user executed commands      |
 | CTRL + D  | exit the prompt EOF   |
