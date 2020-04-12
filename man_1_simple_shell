@@ -1,6 +1,6 @@
 .\" Manpage for Shell
 
-.TH dash 1 "15 April 2020" "1.0" "shell man page"
+.TH ssh 1 "15 April 2020" "1.0" "shell man page"
 
 .SH NAME
     ssh - interface to the Unix system kernel
