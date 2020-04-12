@@ -6,8 +6,9 @@ Clone this repository https://github.com/yacinekedidi/simple_shell.git  to your 
 once you enter the shell you can run your executable and use it similarly to the standard sh.
 # main features
 you can use the simple shell without the use of many libraries that include functions such as printf, strlen, strdup and strtok.
-| ------------ | ------------ |
+
 | env  | prints the current global variables  |
+| ------------ | ------------ |
 | exit  |exits the prompt with 0 status   |
 | history | prints 4096 commands from either a file or the current user executed commands      |
 | CTRL + D  | exit the prompt EOF   |
