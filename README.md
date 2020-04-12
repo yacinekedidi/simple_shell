@@ -16,12 +16,7 @@ you can use the simple shell without the use of many libraries that include func
 | CTRL + C | every time the user sends this signal its handled to not exit the prompt  |
 | ; | execute a bunch of commands separated by  ;  sequentially |
 | # | comment indicator  |
-| exit  |exits the prompt with 0 status   |
-| history | prints 4096 commands from either a file or the current user executed commands      |
-| CTRL + D  | exit the prompt EOF   |
-| CTRL + C | every time the user sends this signal its handled to not exit the prompt  |
-| ; | execute a bunch of commands separated by  ;  sequentially |
-| # | comment indicator  |
+
 
 # Examples
 ![](https://github.com/yacinekedidi/simple_shell/blob/master/Capture.PNG?raw=true)
