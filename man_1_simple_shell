@@ -1,0 +1,127 @@
+.\" Manpage for Shell
+
+.TH dash 1 "15 April 2020" "1.0" "shell man page"
+
+.SH NAME
+    ssh - interface to the Unix system kernel
+
+.SH SYNOPSIS
+    $ [command] [-flags ]
+
+.SH DESCRIPTION
+     A Shell provides you with an interface to the system kernel.
+     It gathers input from the user and  executes  programs  based on
+     that input. When a program  finishes executing, it displays
+     that command's output followed by a new prompt.
+
+.SH PROMPT
+     ssh provides the user a command prompt where the user can 
+     type commands and execute them by pressing newline, ssh 
+     takes the user input and compares it with a couple of builtins
+     if they are equal ssh proceeds to execute these functions otherwise
+     ssh begins to split the line entered by the user into words separated
+     by spaces and then looks for the adequate path for it in the file system
+     if it matches any executable its passed to the system call execve.
+
+
+.SH OPTIONS
+
+Built-ins
+
+     env
+     Prints the current environment
+
+     exit [x]
+     Causes the shell to exit with the exit status  specified by
+     x. If x is omitted then the exit status is that of the last
+     command executed. 
+
+     history
+     Print the history contained in a file named .simple_shell_history
+     and also the commands ran by the current user.
+
+Examples of Commands
+
+     pwd
+     Prints the name of the current directory. man pwd for more info
+
+     ls
+     Lists the files in the current working directory. man ls for more
+     info.
+
+     echo
+     Displays a string to standard output. man echo for more info.
+
+     sh
+     A shell program written by Ken Thompson. man sh for more info.
+
+.SH SEE ALSO
+    sh(1),  csh(1),  environ(7),  execve(2), exit(3), getline(3),
+    kill(2), malloc(3), perror(3), signal(2), strtok(3), wait(2),
+    _exit(2), isatty(3).
+
+.SH EXAMPLE CODE
+
+From Main Function:
+
+
+
+#include "holberton.h"
+
+int main(int ac, char **av, char **env)
+{
+int bytesRead, i, x = 0;
+size_t buffsize;
+char *buffer = NULL, **tokens, **commands;
+h_t *head = NULL;
+(void)ac;
+
+    signal(SIGINT, siggy);
+    while (1)
+    {
+    if (isatty(STDIN_FILENO))
+    _puts("$ ");
+
+    bytesRead = getline(&buffer, &buffsize, stdin);
+    if (bytesRead == -1)
+        break;
+
+    x = berautix() - 1;
+    make_history(buffer, &head, x);
+
+    buffer[bytesRead - 1] = '\0';
+    if (*buffer == '\0')
+    continue;
+
+    if (isbuiltin(buffer, env, &head) == 3 ||
+    isbuiltin(buffer, env, &head) == 1)
+    continue;
+
+    if (isbuiltin(buffer, env, &head) == 2)
+    {
+    free(buffer);
+    exit(1);
+    }
+
+    commands = make_command(buffer, ";");
+
+    for (i = 0 ; commands[i] ; i++)
+    {
+    tokens = make_command(commands[i], " ");
+    exec_command(av, tokens, buffer, env, commands);
+    if (tokens)
+    free(tokens);
+    }
+
+    free(commands);
+    }
+free(buffer);
+return (0);
+}
+
+
+.SH BUGS
+     Not discovered yet
+
+.SH AUTHORS
+     Written by Yacine Kedidi and Jacer Dabbebi
