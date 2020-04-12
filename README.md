@@ -1,7 +1,7 @@
 # Overview
 **simple shell** is a command-line interpreter that replicates the functionalities that the Unix shell provides a command line user interface for Unix-like operating systems. The shell is an interactive command language and is used by the operating system to control the execution of the system using shell scripts.
 # how to get
-Clone this repository [clone][clone][clone]: https://github.com/yacinekedidi/simple_shell.git "Clone" to your local system and compile using gcc -Wall -Werror -Wextra -pedantic *.c.
+Clone this repository [github]([clone][clone] [clone]: https://github.com/yacinekedidi/simple_shell.git "Clone" "github") to your local system and compile using gcc -Wall -Werror -Wextra -pedantic *.c.
 # How to use
 once you enter the shell you can run your executable and use it similarly to the standard sh.
 # main features
@@ -21,7 +21,5 @@ you can use the simple shell without the use of many libraries that include func
 14 April 2019 
 -- Still working on other features
 # Authors
-Yacine Kedidi [Github][Github1]
-[Github1]: https://github.com/yacinekedidi "Github"
-Jacer Dabbebi [Github][Github]
-[Github]: https://github.com/jaycer95 "Github"
+Yacine Kedidi https://github.com/yacinekedidi "Github"
+Jacer Dabbebi https://github.com/jaycer95 "Github"
