@@ -24,5 +24,5 @@ you can use the simple shell without the use of many libraries that include func
 14 April 2019 
 -- Still working on other features
 # Authors
-Yacine Kedidi https://github.com/yacinekedidi 
+Yacine Kedidi [GITHUB](https://github.com/yacinekedidi "GITHUB")
 Jacer Dabbebi https://github.com/jaycer95 
