@@ -1,6 +1,6 @@
-.\" Manpage for Shell
+.\" Manpage for SSH
 
-.TH ssh 1 "15 April 2020" "1.0" "shell man page"
+.TH SSH 1 "15 April 2020" "1.0" "SSH man page"
 
 .SH NAME
     ssh - interface to the Unix system kernel
@@ -9,13 +9,13 @@
     $ [command] [-flags ]
 
 .SH DESCRIPTION
-     A Shell provides you with an interface to the system kernel.
+     SSH provides you with an interface to the system kernel.
      It gathers input from the user and  executes  programs  based on
      that input. When a program  finishes executing, it displays
      that command's output followed by a new prompt.
 
 .SH PROMPT
-     ssh provides the user a command prompt where the user can 
+     SSH provides the user a command prompt where the user can 
      type commands and execute them by pressing newline, ssh 
      takes the user input and compares it with a couple of builtins
      if they are equal ssh proceeds to execute these functions otherwise
