@@ -9,11 +9,12 @@
 
 int main(int ac, char *av[], char *env[])
 {
-int bytesRead, i/*, x = 0;*/, t = 0;
+int bytesRead, i/*, x = 0;*/, t = 0, z = -1;
 size_t buffsize;
 char *buffer = NULL, **tokens = NULL, **commands;
 h_t *head = NULL;
 (void)ac;
+
 	signal(SIGINT, siggy);
 	while (1)
 	{
@@ -26,11 +27,10 @@ h_t *head = NULL;
 	buffer[bytesRead - 1] = '\0';
 	if (*buffer == '\0')
 	continue;
-	if (isbuiltin(buffer, env, &head) == 1)
+	z = isbuiltin(buffer, env, &head);
+	if (z == 1)
 	continue;
-	if (isbuiltin(buffer, env, &head) == 4)
-	continue;
-	if (isbuiltin(buffer, env, &head) == 2)
+	if (z == 2)
 	free(buffer), _exit(0);
 	commands = make_command(buffer, ";");
 	if (testspace(commands) == 0)
