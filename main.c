@@ -20,7 +20,7 @@ h_t *head = NULL;
 	{
 		t = 0;
 	if (isatty(STDIN_FILENO))
-	_puts("$ ");
+	_puts("#cisfun$ ");
 	bytesRead = getline(&buffer, &buffsize, stdin);
 	if (bytesRead == -1)
 		break;
