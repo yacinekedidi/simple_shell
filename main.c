@@ -31,7 +31,7 @@ h_t *head = NULL;
 	if (isbuiltin(buffer, env, &head) == 1)
 	continue;
 	if (isbuiltin(buffer, env, &head) == 2)
-	free(buffer), exit(1);
+	free(buffer), exit(0);
 	commands = make_command(buffer, ";");
 	if (testspace(commands) == 0)
 	for (i = 0 ; commands[i] ; i++)
