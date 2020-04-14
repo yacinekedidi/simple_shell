@@ -26,9 +26,9 @@ h_t *head = NULL;
 	buffer[bytesRead - 1] = '\0';
 	if (*buffer == '\0')
 	continue;
-	if (isbuiltin(buffer, env, &head) == 4)
-	continue;
 	if (isbuiltin(buffer, env, &head) == 1)
+	continue;
+	if (isbuiltin(buffer, env, &head) == 4)
 	continue;
 	if (isbuiltin(buffer, env, &head) == 2)
 	free(buffer), _exit(0);
