@@ -11,9 +11,13 @@ void _puts(char *str)
 {
 int i = 0;
 
-	while (str[i++])
-	;
+	while (str[i])
+	{
+		i++;
+	}
+	printf("%i", i);
 write(STDOUT_FILENO, str, i);
+
 }
 
 /**
@@ -24,7 +28,7 @@ write(STDOUT_FILENO, str, i);
 void siggy(int sig_num)
 {
 	if (sig_num == SIGINT)
-	write(STDOUT_FILENO, "\n$ ", 3);
+	write(STDOUT_FILENO, "\n#cisfun$ ", 10);
 }
 
 /**
