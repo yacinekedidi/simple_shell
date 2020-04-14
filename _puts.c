@@ -15,7 +15,6 @@ int i = 0;
 	{
 		i++;
 	}
-	printf("%i", i);
 write(STDOUT_FILENO, str, i);
 
 }
