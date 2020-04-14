@@ -51,7 +51,7 @@ char cmdpath[1024];
 	execve(cmdpath, tokens, env);
 	}
 	else
-	/* wait(&statu); */
-	waitpid(pid, &statu, 0);
+	wait(&statu);
+	/*waitpid(pid, &statu, 0);*/
 
 }
