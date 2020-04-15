@@ -52,4 +52,8 @@ int spacecheck(char *);
 
 int testspace(char **commands);
 void semicolonproblem(char **av);
+
+
+void filecommands(char **av, char **, int);
+
 #endif

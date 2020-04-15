@@ -13,9 +13,11 @@ int bytesRead, i/*, x = 0;*/, t = 0, z = -1;
 size_t buffsize;
 char *buffer = NULL, **tokens = NULL, **commands;
 h_t *head = NULL;
-(void)ac;
-
-	signal(SIGINT, siggy);
+if (ac != 1)
+{
+filecommands(av, env, t);
+return (0);
+} signal(SIGINT, siggy);
 	while (1)
 	{ t = 0;
 	if (isatty(STDIN_FILENO))
@@ -27,12 +29,10 @@ h_t *head = NULL;
 	if (*buffer == '\0')
 	continue;
 	z = isbuiltin(buffer, env, &head);
-	if (z == 1)
+	if (z == 1 || z == 4)
 	continue;
 	if (z == 2)
 	free(buffer), _exit(0);
-	if (z == 4)
-	continue;
 	if (spacecheck(buffer) == 0)
 	continue;
 	commands = make_command(buffer, ";");
