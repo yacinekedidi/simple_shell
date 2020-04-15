@@ -32,6 +32,8 @@ h_t *head = NULL;
 	continue;
 	if (z == 2)
 	free(buffer), _exit(0);
+	if (z == 4)
+		continue;
 	commands = make_command(buffer, ";");
 	if (testspace(commands) == 0)
 	for (i = 0 ; commands[i] ; i++)
@@ -45,7 +47,6 @@ h_t *head = NULL;
 	{
 	t = 1, exec_command(av, tokens, buffer, env, commands, t);
 	} free(commands);
-	}
-free(buffer);
+	} free(buffer);
 return (0);
 }
