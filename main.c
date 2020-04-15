@@ -17,13 +17,12 @@ h_t *head = NULL;
 
 	signal(SIGINT, siggy);
 	while (1)
-	{
-		t = 0;
+	{ t = 0;
 	if (isatty(STDIN_FILENO))
 	_puts("#cisfun$ ");
 	bytesRead = getline(&buffer, &buffsize, stdin);
 	if (bytesRead == -1)
-		break;
+	break;
 	buffer[bytesRead - 1] = '\0';
 	if (*buffer == '\0')
 	continue;
@@ -33,6 +32,8 @@ h_t *head = NULL;
 	if (z == 2)
 	free(buffer), _exit(0);
 	if (z == 4)
+	continue;
+	if (spacecheck(buffer) == 0)
 	continue;
 	commands = make_command(buffer, ";");
 	if (testspace(commands) == 0)
@@ -44,9 +45,8 @@ h_t *head = NULL;
 	free(tokens);
 	}
 	else
-	{
 	t = 1, exec_command(av, tokens, buffer, env, commands, t);
-	} free(commands);
+	free(commands);
 	} free(buffer);
 return (0);
 }

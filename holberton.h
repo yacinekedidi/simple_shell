@@ -48,7 +48,7 @@ void freedouble(char **array);
 
 int berautix(void);
 void make_history(char *buffer, h_t **head, int x);
-
+int spacecheck(char *);
 
 int testspace(char **commands);
 void semicolonproblem(char **av);
