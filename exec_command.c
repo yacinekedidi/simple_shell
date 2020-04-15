@@ -48,7 +48,7 @@ char cmdpath[1024];
 			}
 		}
 
-	execve(cmdpath, tokens, env);
+	execve(cmdpath, tokens, NULL);
 	}
 	else
 	wait(&statu);

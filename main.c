@@ -33,7 +33,7 @@ h_t *head = NULL;
 	if (z == 2)
 	free(buffer), _exit(0);
 	if (z == 4)
-		continue;
+	continue;
 	commands = make_command(buffer, ";");
 	if (testspace(commands) == 0)
 	for (i = 0 ; commands[i] ; i++)
