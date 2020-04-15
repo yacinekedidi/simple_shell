@@ -26,7 +26,7 @@ do {
 
 } while (rb == 1024);
 
-
+buffer[rb] = '\0';
 
 commands = make_command(buffer, "\n");
 
