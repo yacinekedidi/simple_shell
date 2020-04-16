@@ -23,7 +23,7 @@ struct stat sta;
 
 	if (!buf)
 	{
-	write(2, "./hsh: 1: ls: not found", 24);
+	write(2, "./hsh: 1: ls: not found\n", 24);
 	exit(127);
 	}
 	while (*(++buf) != '/')
