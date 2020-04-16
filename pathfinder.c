@@ -16,13 +16,16 @@ struct stat sta;
 
 	while (env[i])
 	{
-		if (env[i][0] == 'P' && env[i][1] == 'A'
-		&& env[i][2] == 'T' && env[i][3] == 'H'
-		&& env[i][4] == '=')
+		if (_strncmp(env[i], "PATH=", 5) == 0)
 		buf = env[i];
 	i++;
 	}
 
+	if (!buf)
+	{
+	write(2, "./hsh: 1: ls: not found", 24);
+	exit(127);
+	}
 	while (*(++buf) != '/')
 	;
 
@@ -31,7 +34,6 @@ struct stat sta;
 	{
 	_strcpy(cmdpath, s);
 	_strcat(strcat(cmdpath, "/"), s1);
-	/*printf("%s\n", _strcat(strcat(cmdpath, "/"), s1));*/
 		if (stat(cmdpath, &sta) == 0)
 		break;
 	s = strtok(NULL, ":");
