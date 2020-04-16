@@ -16,8 +16,10 @@ void filecommands(char **av, char **env, int t)
 
 fd = open(av[1], O_RDONLY);
 if (fd == -1)
-perror("cant open");
-
+{
+perror(av[1]);
+exit(2);
+}
 do {
 
 	rb = read(fd, buffer, 1024);
