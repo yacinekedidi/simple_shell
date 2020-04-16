@@ -17,8 +17,7 @@ struct stat sta;
 	while (env[i])
 	{
 		if (env[i][0] == 'P' && env[i][1] == 'A'
-		&& env[i][2] == 'T' && env[i][3] == 'H'
-		&& env[i][4] == '=')
+		&& env[i][2] == 'T' && env[i][3] == 'H')
 		buf = env[i];
 	i++;
 	}
