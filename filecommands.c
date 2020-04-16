@@ -18,7 +18,7 @@ fd = open(av[1], O_RDONLY);
 if (fd == -1)
 {
 write(2, av[0], _strlen(av[0]));
-write(2, ": Can't open ", 13);
+write(2, ": 0:Can't open ", 15);
 write(2, av[1], _strlen(av[1]));
 write(2, "\n", 1);
 exit(127);
