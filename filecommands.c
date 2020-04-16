@@ -17,8 +17,11 @@ void filecommands(char **av, char **env, int t)
 fd = open(av[1], O_RDONLY);
 if (fd == -1)
 {
-perror(av[1]);
-exit(2);
+write(2, av[0], _strlen(av[0]));
+write(2, ": Can't open ", 13);
+write(2, av[1], _strlen(av[1]));
+write(2, "\n", 1);
+exit(127);
 }
 do {
 
