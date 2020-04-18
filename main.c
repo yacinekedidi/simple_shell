@@ -8,10 +8,11 @@
 */
 
 int main(int ac, char *av[], char *env[])
-{ int bytesRead, i, x = 0, t = 0, z = -1;
+{ int bytesRead, i, /*x = 0,*/ t = 0, z = -1;
 size_t buffsize;
 char *buffer = NULL, **tokens = NULL, **commands;
 h_t *head = NULL;
+
 if (ac != 1)
 { filecommands(av, env, t);
 return (0);
@@ -23,7 +24,7 @@ return (0);
 	bytesRead = getline(&buffer, &buffsize, stdin);
 	if (bytesRead == -1)
 	break;
-	x = berautix() - 1, make_history(buffer, &head, x);
+	/*x = berautix() - 1, make_history(buffer, &head, x);*/
 	buffer[bytesRead - 1] = '\0';
 	if (*buffer == '\0')
 	continue;
