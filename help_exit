@@ -1,0 +1,6 @@
+exit: exit status
+On Unix-like operating systems, the exit command causes the shell to exit.
+Description
+When you run exit, if you have jobs running in the background, the shell will remind you that they are running and return you to the command prompt. In this case, issuing exit again will terminate those jobs and exit the shell.
+Syntax
+exit
