@@ -9,7 +9,7 @@
 
 int main(int ac, char *av[], char *env[])
 {
-int bytesRead, /*x = 0,*/ t = 0, z = -1;
+int bytesRead, x = 0, t = 0, z = -1;
 size_t buffsize;
 char *buffer = NULL, **tokens = NULL, **commands = NULL;
 h_t *head = NULL;
