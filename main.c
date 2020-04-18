@@ -9,9 +9,9 @@
 
 int main(int ac, char *av[], char *env[])
 {
-int bytesRead, i/*, x = 0;*/, t = 0, z = -1;
+int bytesRead, x = 0, t = 0, z = -1;
 size_t buffsize;
-char *buffer = NULL, **tokens = NULL, **commands;
+char *buffer = NULL, **tokens = NULL, **commands = NULL;
 h_t *head = NULL;
 
 if (ac != 1)
@@ -25,28 +25,19 @@ return (0);
 	bytesRead = getline(&buffer, &buffsize, stdin);
 	if (bytesRead == -1)
 	break;
+	x = berautix() - 1, make_history(buffer, &head, x);
 	buffer[bytesRead - 1] = '\0';
 	if (*buffer == '\0')
 	continue;
 	z = isbuiltin(buffer, env, &head);
-	if (z == 1 || z == 4)
+	if (z == 1 || z == 4 || z == 3)
 	continue;
 	if (z == 2)
-	free(buffer), _exit(0);
+	free(buffer), free_nodes(head), _exit(0);
 	if (spacecheck(buffer) == 0)
 	continue;
-	commands = make_command(buffer, ";");
-	if (testspace(commands) == 0)
-	for (i = 0 ; commands[i] ; i++)
-	{
-	tokens = make_command(commands[i], " ");
-	exec_command(av, tokens, buffer, env, commands, t);
-	if (tokens)
-	free(tokens);
-	}
-	else
-	t = 1, exec_command(av, tokens, buffer, env, commands, t);
-	free(commands);
-	} free(buffer);
+	tokenizing(tokens, commands, av, env, buffer, t);
+	} free_nodes(head);
+	free(buffer);
 return (0);
 }

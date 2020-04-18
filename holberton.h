@@ -55,7 +55,8 @@ void semicolonproblem(char **av);
 void filecommands(char **av, char **, int);
 
 
-void free_list(h_t *head);
-
+void free_nodes(h_t *head);
+void tokenizing(char **tokens, char **commands,
+char **av, char **env, char *buffer, int t);
 
 #endif
