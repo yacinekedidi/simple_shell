@@ -27,7 +27,7 @@ struct his *next;
 
 /* shell utilities */
 char **make_command(char *buffer, char *sep);
-void exec_command(char **av, char **tokens, char *, char **, char **, int);
+int exec_command(char **av, char **tokens, char *, char **, char **, int);
 void pathfinder(char *s1, char **env, char *);
 void siggy(int sig_num);
 
@@ -52,8 +52,10 @@ int spacecheck(char *);
 
 int testspace(char **commands);
 void semicolonproblem(char **av);
-
-
 void filecommands(char **av, char **, int);
+
+
+void free_list(h_t *head);
+
 
 #endif
