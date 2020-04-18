@@ -9,7 +9,7 @@
 
 int main(int ac, char *av[], char *env[])
 {
-int bytesRead, x = 0, t = 0, z = -1;
+int bytesRead, /*x = 0,*/ t = 0, z = -1;
 size_t buffsize;
 char *buffer = NULL, **tokens = NULL, **commands = NULL;
 h_t *head = NULL;
@@ -25,12 +25,13 @@ return (0);
 	bytesRead = getline(&buffer, &buffsize, stdin);
 	if (bytesRead == -1)
 	break;
-	x = berautix() - 1, make_history(buffer, &head, x);
+	/*x = berautix() - 1;
+	make_history(buffer, &head, x);*/
 	buffer[bytesRead - 1] = '\0';
 	if (*buffer == '\0')
 	continue;
 	z = isbuiltin(buffer, env, &head);
-	if (z == 1 || z == 4 || z == 3)
+	if (z == 1 || z == 4 )/*|| z == 3)*/
 	continue;
 	if (z == 2)
 	free(buffer), free_nodes(head), _exit(0);
