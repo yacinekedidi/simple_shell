@@ -53,5 +53,5 @@ char *msg = "./hsh: 1: ", *msg1 = ": not found\n";
 	}
 	else
 	wait(&statu);
-return (WEXITSTATUS(statu));
+return (statu);
 }
