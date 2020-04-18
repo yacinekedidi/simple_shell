@@ -18,10 +18,11 @@ pid_t pid = 0;
 int statu = 0;
 struct stat sta;
 char cmdpath[1024];
-char *msg = "./hsh: 1: ", *msg1 = ": not found\n";
 
 (void)commands;
+
 	pid = fork();
+
 	if (pid == -1)
 	perror(av[0]);
 
@@ -34,15 +35,13 @@ char *msg = "./hsh: 1: ", *msg1 = ": not found\n";
 		free(buffer);
 		exit(2);
 		}
-	_strcpy(cmdpath, tokens[0]);
+		_strcpy(cmdpath, tokens[0]);
 		if (stat(tokens[0], &sta) != 0)
 		{
 		pathfinder(tokens[0], env, cmdpath);
 			if  (cmdpath[0] == '\0')
 			{
-			write(2, msg, _strlen(msg));
-			write(2, tokens[0], _strlen(tokens[0]));
-			write(2, msg1, _strlen(msg1));
+			perror(av[0]);
 			free(buffer);
 			free(tokens);
 			free(commands);
@@ -53,5 +52,5 @@ char *msg = "./hsh: 1: ", *msg1 = ": not found\n";
 	}
 	else
 	wait(&statu);
-return (statu);
+return (0);
 }
