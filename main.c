@@ -39,6 +39,7 @@ return (0);
 	continue;
 	tokenizing(tokens, commands, av, env, buffer, t);
 	}
+	writehistory(head);
 	free_nodes(head);
 	free(buffer);
 return (0);

@@ -79,3 +79,38 @@ i++;
 return (n);
 }
 
+
+
+/**
+ * itoa2 - Short description, single line
+ * @n: Description of parameter xe
+ * @e: string
+* Return: Description of the returned value
+*/
+char *itoa2(int n, char *e)
+{
+int i = 0, l = 0, j, div = 1, x = n;
+char tmp;
+
+
+while (x /= 10)
+{
+i++;
+}
+
+
+for (j = 0 ; j < i ; j++)
+div *= 10;
+
+while (div)
+{
+	tmp = (n / div) +'0';
+	e[l] = tmp;
+	n = n % div;
+	div /= 10;
+l++;
+}
+e[l] = '\0';
+
+return (e);
+}

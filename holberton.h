@@ -59,4 +59,7 @@ void free_nodes(h_t *head);
 void tokenizing(char **tokens, char **commands,
 char **av, char **env, char *buffer, int t);
 
+
+void writehistory(h_t *head);
+char *itoa2(int n, char *);
 #endif
