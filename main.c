@@ -25,20 +25,22 @@ return (0);
 	bytesRead = getline(&buffer, &buffsize, stdin);
 	if (bytesRead == -1)
 	break;
-	/*x = berautix() - 1;
-	make_history(buffer, &head, x);*/
+	/*x = berautix() - 1;*/
+	/*make_history(buffer, &head, x);*/
 	buffer[bytesRead - 1] = '\0';
 	if (*buffer == '\0')
 	continue;
 	z = isbuiltin(buffer, env, &head);
-	if (z == 1 || z == 4 )/*|| z == 3)*/
+	if (z == 1 || z == 4)
+	/*|| z == 3)*/
 	continue;
 	if (z == 2)
-	free(buffer), free_nodes(head), _exit(0);
+	free(buffer)/*,free_nodes(head)*/, _exit(0);
 	if (spacecheck(buffer) == 0)
 	continue;
 	tokenizing(tokens, commands, av, env, buffer, t);
-	} free_nodes(head);
+	}
+	/* free_nodes(head); */
 	free(buffer);
 return (0);
 }
