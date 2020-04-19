@@ -1,0 +1,6 @@
+history: history [options]
+The history built-in command allows you to use words from previous command lines in the command line you are typing. This simplifies spelling corrections and the repetition of complicated commands or arguments.
+Description
+Each shell (the Bourne shell, the Bourne Again Shell, the C Shell, the Korn Shell, etc.) has its own slight differences in how it handles, and allows access to, the command history. In general, the following commands will help you navigate and use your command history within your Linux/Unix shell.
+
+history displays or manipulate the history list with line numbers, prefixing each modified entry with a '*'. An argument of n lists only the last b entries.
